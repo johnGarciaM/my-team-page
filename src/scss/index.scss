@@ -1,0 +1,72 @@
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap");
+
+// utilities
+@import "variables";
+@import "mixins";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 90%;
+	height: 100vh;
+	margin: 0 auto;
+	overflow: hidden;
+  @include custom-breakpoint {
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+	header {
+		width: 100%;
+		margin-block-start: 2rem;
+		display: flex;
+		justify-content: space-evenly;
+		@include custom-breakpoint {
+			flex-direction: column;
+		}
+		h1 {
+			@include format-text($font-family-pt-serif, 36px, 700, normal, 47.7px);
+		}
+		.content {
+			width: 20%;
+			@include custom-breakpoint {
+				width: 90%;
+			}
+			h2 {
+				@include format-text($font-family-poppins, 18px, 600, normal, 27px);
+			}
+			p {
+				@include format-text($font-family-poppins, 14px, 400, normal, 21px);
+			}
+		}
+	}
+  main{
+    margin-block-start: 3rem;
+    section{
+      display: grid;
+      @include custom-breakpoint {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+		  }
+      article{
+        img{
+          width: 80%;
+        }
+      }
+    }
+  }
+  footer{
+    p{
+      margin: 5rem 0rem 1rem 0rem;
+      text-align: center;
+      color: #A9A9A9;
+      @include format-text($font-family-montserrat, 14px, 500, normal, 17.07px);
+    }
+  }
+}

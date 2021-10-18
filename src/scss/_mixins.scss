@@ -1,0 +1,15 @@
+@import "variables";
+
+@mixin custom-breakpoint{
+  @media (max-width: $layout-breakpoint-small) {
+    @content
+  }
+}
+
+@mixin format-text($family, $size, $weight, $style, $line) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  line-height: $line;
+}
