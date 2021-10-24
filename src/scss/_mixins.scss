@@ -1,7 +1,7 @@
 @import "variables";
 
 @mixin custom-breakpoint{
-  @media (max-width: $layout-breakpoint-small) {
+  @media (min-width: $layout-breakpoint-small) {
     @content
   }
 }
