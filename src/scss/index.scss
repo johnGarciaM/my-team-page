@@ -53,12 +53,30 @@
       @include custom-breakpoint {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
+				.right-column {
+					margin-top: 3em;
+				}
+				article{
+					height: 15rem;
+					margin-inline-end: 2rem;
+					.user-role{
+						position: relative;
+						top: -55%;
+						right: -70%;
+						display: flex;
+						justify-content: flex-end;
+						width: 50%;
+						transform: rotate(270deg);
+						@include format-text($font-family-pt-serif, 10px, 400, normal, 13.25px);
+					}
+					img{
+						width: 85%;
+					}
+					h5{
+						@include format-text($font-family-poppins, 14px, 600, normal, 21px);
+					}
+				}
 		  }
-      article{
-        img{
-          width: 80%;
-        }
-      }
     }
   }
   footer{
